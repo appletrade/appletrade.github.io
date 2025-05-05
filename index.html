@@ -64,10 +64,13 @@
     <input type="number" id="amount" placeholder="Ingrese el precio del iPhone que desea calcular">
     <button onclick="calculateInstallments()">Calcular</button>
     <div class="result" id="result">
+        <p>2 cuotas: -</p>
         <p>3 cuotas: -</p>
         <p>6 cuotas: -</p>
         <p>9 cuotas: -</p>
         <p>12 cuotas: -</p>
+        <p>18 cuotas: -</p>
+        <p>24 cuotas: -</p>
     </div>
 
     <script>
@@ -88,16 +91,23 @@
                 return;
             }
 
-            const valor2 = (amount * 1.29) / 3;
-            const valor3 = (amount * 1.38) / 6;
-            const valor4 = (amount * 1.49) / 9;
-            const valor5 = (amount * 1.60) / 12;
+            const valor2 = (amount * 1.29768) / 3;
+            const valor3 = (amount * 1.43623) / 6;
+            const valor4 = (amount * 1.60324) / 9;
+            const valor5 = (amount * 1.75998) / 12;
+            const valor6 = (amount * 2.19329) / 18;
+            const valor7 = (amount * 2.6373) / 24;
+            const valor8 = (amount * 1.26611) / 2;
 
             document.getElementById("result").innerHTML = `
+                <p>Pagando en 2 cuotas de: ${formatCurrency(valor8)}</p>
                 <p>Pagando en 3 cuotas de: ${formatCurrency(valor2)}</p>
                 <p>Pagando en 6 cuotas de: ${formatCurrency(valor3)}</p>
                 <p>Pagando en 9 cuotas de: ${formatCurrency(valor4)}</p>
                 <p>Pagando en 12 cuotas de: ${formatCurrency(valor5)}</p>
+                <p>Pagando en 18 cuotas de: ${formatCurrency(valor6)}</p>
+                <p>Pagando en 24 cuotas de: ${formatCurrency(valor7)}</p>
+
             `;
         }
     </script>
